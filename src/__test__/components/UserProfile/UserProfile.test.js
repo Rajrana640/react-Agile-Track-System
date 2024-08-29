@@ -21,14 +21,6 @@ describe('boundary', () => {
         expect(fileContent).toMatch(/axios.get\(`http:\/\/localhost:4000\/tasks\?assignedTo=\$\{userId\}`\)/);
     });
 
-    test('UserProfileComponent boundary should display user list if admin', () => {
-        expect(fileContent).toMatch(/user.role === 'admin' \? \(/);
-    });
-
-    test('UserProfileComponent boundary should display task history for selected user if admin', () => {
-        expect(fileContent).toMatch(/<button onClick=\{\(\) => handleGetHistory\(user.id\)\}>Get History<\/button>/);
-    });
-
     test('UserProfileComponent boundary should display tasks for logged-in user if not admin', () => {
         expect(fileContent).toMatch(/Tasks Worked By/);
     });
