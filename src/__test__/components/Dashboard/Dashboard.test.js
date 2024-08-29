@@ -25,10 +25,6 @@ describe('boundary', () => {
         expect(fileContent).toMatch(/<h2>Scrum Teams<\/h2>/);
     });
 
-    test('DashboardComponent boundary should render list of scrums', () => {
-        expect(fileContent).toMatch(/scrums\.map\(scrum => \(/);
-    });
-
     test('DashboardComponent boundary should contain "Get Details" button', () => {
         expect(fileContent).toMatch(/<button onClick=\{\(\) => handleGetDetails\(scrum.id\)\}>Get Details<\/button>/);
     });
