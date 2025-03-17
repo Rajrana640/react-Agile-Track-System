@@ -27,6 +27,13 @@
       "password": "password3",
       "role": "employee",
       "id": 4
+    },
+    {
+      "name": "raj",
+      "email": "rajrana640@gmail.com",
+      "password": "rajrana640",
+      "role": "employee",
+      "id": 5
     }
   ],
   "scrums": [

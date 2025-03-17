@@ -1,0 +1,200 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "password": "adminpassword",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Employee One",
+      "email": "employee1@example.com",
+      "password": "password1",
+      "role": "employee"
+    },
+    {
+      "id": 3,
+      "name": "Employee Two",
+      "email": "employee2@example.com",
+      "password": "password2",
+      "role": "employee"
+    },
+    {
+      "name": "Employee Three",
+      "email": "employee3@example.com",
+      "password": "password3",
+      "role": "employee",
+      "id": 4
+    },
+    {
+      "name": "Rajpal",
+      "email": "rajrana640@gmail.com",
+      "password": "rajrana640@",
+      "role": "employee",
+      "id": 7
+    },
+    {
+      "name": "Omkar",
+      "email": "oshinde@gmail.com",
+      "password": "omkar123",
+      "role": "employee",
+      "id": 8
+    },
+    {
+      "name": "Vaibhav",
+      "email": "vaibhav@gmail.com",
+      "password": "vaibhav123",
+      "role": "employee",
+      "id": 9
+    }
+  ],
+  "scrums": [
+    {
+      "id": 1,
+      "name": "Scrum Team A"
+    },
+    {
+      "id": 2,
+      "name": "Scrum Team B"
+    },
+    {
+      "name": "Scrum Team C",
+      "id": 3
+    },
+    {
+      "name": "Scrum Team D",
+      "id": 4
+    }
+
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Task One",
+      "description": "Description for Task One",
+      "status": "In Progress",
+      "scrumId": 1,
+      "assignedTo": 2,
+      "history": [
+        {
+          "status": "To Do",
+          "date": "2024-07-01"
+        },
+        {
+          "status": "In Progress",
+          "date": "2024-08-26"
+        },
+        {
+          "status": "Done",
+          "date": "2024-08-26"
+        },
+        {
+          "status": "To Do",
+          "date": "2025-03-15"
+        },
+        {
+          "status": "In Progress",
+          "date": "2025-03-15"
+        },
+        {
+          "status": "In Progress",
+          "date": "2025-03-15"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Task Two",
+      "description": "Description for Task Two",
+      "status": "In Progress",
+      "scrumId": 2,
+      "assignedTo": 3,
+      "history": [
+        {
+          "status": "To Do",
+          "date": "2024-07-02"
+        },
+        {
+          "status": "In Progress",
+          "date": "2024-07-03"
+        },
+        {
+          "status": "To Do",
+          "date": "2025-03-15"
+        },
+        {
+          "status": "In Progress",
+          "date": "2025-03-16"
+        }
+      ]
+    },
+    {
+      "title": "Task 3",
+      "description": "Description for Task 3",
+      "status": "To Do",
+      "scrumId": 3,
+      "assignedTo": 3,
+      "history": [
+        {
+          "status": "In Progress",
+          "date": "2024-08-26"
+        },
+        {
+          "status": "Done",
+          "date": "2025-03-15"
+        },
+        {
+          "status": "To Do",
+          "date": "2025-03-15"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "title": "Task for Raj",
+      "description": "Task for Raj Scrum Team D",
+      "status": "In Progress",
+      "scrumId": 4,
+      "assignedTo": 7,
+      "history": [
+        {
+          "status": "To Do",
+          "date": "2025-03-15"
+        },
+        {
+          "status": "To Do",
+          "date": "2025-03-15"
+        },
+        {
+          "status": "In Progress",
+          "date": "2025-03-15"
+        },
+        {
+          "status": "To Do",
+          "date": "2025-03-17"
+        },
+        {
+          "status": "In Progress",
+          "date": "2025-03-17"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "title": "Task for Vaibhav",
+      "description": "Task for Vaibhav",
+      "status": "In Progress",
+      "scrumId": 5,
+      "assignedTo": 9,
+      "history": [
+        {
+          "status": "In Progress",
+          "date": "2025-03-17"
+        }
+      ],
+      "id": 5
+    }
+  ]
+}

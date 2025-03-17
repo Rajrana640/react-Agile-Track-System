@@ -1,18 +1,25 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const history = useHistory();
     const { login } = useContext(UserContext);
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
+    // Validation schema
+    const validationSchema = Yup.object({
+        email: Yup.string()
+            .email("Please include an '@'.")
+            .required('Email is required'),
+        password: Yup.string().required('Password is required'),
+    });
+
+    const handleLogin = async (values, { setSubmitting, setErrors }) => {
         try {
-            const response = await axios.get(`http://localhost:4000/users?email=${email}&password=${password}`);
+            const response = await axios.get(`http://localhost:4000/users?email=${values.email}&password=${values.password}`);
             if (response.data.length > 0) {
                 const user = response.data[0];
                 login(user);
@@ -22,27 +29,39 @@ const Login = () => {
                     history.push('/profiles');
                 }
             } else {
-                alert('Invalid email or password');
+                setErrors({ credentials: 'Invalid email or password' });
             }
         } catch (error) {
             console.error('Error logging in:', error);
         }
+        setSubmitting(false);
     };
 
     return (
         <div>
             <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <label>
-                    Email:
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                </label>
-                <button type="submit">Login</button>
-            </form>
+            <Formik
+                initialValues={{ email: '', password: '' }}
+                validationSchema={validationSchema}
+                onSubmit={handleLogin}
+            >
+                {({ isSubmitting, errors }) => (
+                    <Form>
+                        <div>
+                            <label>Email:</label>
+                            <Field type="email" name="email" />
+                            <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
+                        </div>
+                        <div>
+                            <label>Password:</label>
+                            <Field type="password" name="password" />
+                            <ErrorMessage name="password" component="div" style={{ color: 'red' }} />
+                        </div>
+                        {errors.credentials && <div style={{ color: 'red' }}>{errors.credentials}</div>}
+                        <button type="submit" disabled={isSubmitting}>Login</button>
+                    </Form>
+                )}
+            </Formik>
             <button onClick={() => history.push('/signup')}>Sign Up</button>
         </div>
     );

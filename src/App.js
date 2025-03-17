@@ -4,7 +4,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
 import UserProfile from './components/UserProfile/UserProfile';
 import SignUp from './components/Signup/SignUp';
-import { UserProvider, UserContext } from '../src/context/UserContext';
+import { UserProvider, UserContext } from './context/UserContext';
 
 const App = () => {
   return (
